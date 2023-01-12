@@ -2,18 +2,49 @@
 <html> 
     <style> 
         #progress{ 
-            width: 100%; 
-            background-color: #fff2cd;
+            margin: 0; 
+            position: absolute; 
+            width: 25%; 
+            height: 20px; 
+            top: 60%;
+            left: 50%; 
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: #cebd8f;
         }
         #bar{ 
+            margin: 0; 
+            position: absolute; 
             width: 1%; 
-            height: 50px; 
+            height: 20px; 
+            top: 50%; 
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
             background-color: #f4e9dd;
             text-align: center;
         }
         .img{
-            height: 20px; 
+            margin: 0;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
             text-align: center;
+        }
+        .center{ 
+            margin: 0; 
+            position: absolute;
+            top: 25%; 
+            left: 50%; 
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        body{ 
+            background-color: #fff2cd;
+            font-family: cursive; 
         }
     </style> 
 
@@ -22,14 +53,14 @@
         function move(){ 
             if(i == 0){ 
                 var elem = document.getElementById("bar")
-                var width = 1; 
-                var id = setInterval(frame, 20); 
+                var width = 0.1; 
+                var id = setInterval(frame, 5); 
                 function frame(){ 
-                    if(width == 100){ 
+                    if(width >= 100){ 
                         clearInterval(id); 
                         i = 0; 
                     } else{ 
-                        width++; 
+                        width += 0.1; 
                         elem.style.width = width + "%"; 
                     }
                 }
@@ -40,6 +71,9 @@
         <title>loading screen</title>
     </head>
     <body onload="move()">
+        <div class="center"> 
+            <h2>Loading</h2>
+        </div>
         <div id="progress"> 
             <div id="bar"></div>
         </div>
