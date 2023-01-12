@@ -11,7 +11,7 @@
             -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
             text-align: center;
-            background-color: #cebd8f;
+            background-color: #b5a89c;
         }
         #bar{ 
             margin: 0; 
@@ -22,7 +22,7 @@
             left: 50%;
             -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
-            background-color: #fff2cd;
+            background-color: #e3cbb4;
             text-align: center;
         }
         .img{
@@ -53,10 +53,10 @@
         function move(){ 
             if(i == 0){ 
                 var elem = document.getElementById("bar")
-                var width = 0.1; 
+                var width = 0; 
                 var id = setInterval(frame, 5); 
                 function frame(){ 
-                    if(width >= 100){ 
+                    if(width > 100.1){ 
                         clearInterval(id); 
                         i = 0; 
                     } else{ 
