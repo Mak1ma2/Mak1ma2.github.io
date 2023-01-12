@@ -1,47 +1,51 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html> 
-    <head>
-        <title>Annoy Avy</title>
-        <script type = "text/javascript">
-            function displayNextImage() {
-                x = (x === images.length - 1) ? 0 : x + 1;
-                document.getElementById("img").src = images[x];
-            }
-  
-            function displayPreviousImage() {
-                x = (x <= 0) ? images.length - 1 : x - 1;
-                document.getElementById("img").src = images[x];
-            }
-  
-            function startTimer() {
-                setInterval(displayNextImage, 500);
-            }
-  
-            var images = [], x = -1;
-            images[0] = "blobleekLweb.jpg";
-            images[1] = "blobleekRweb.jpg";
-        </script>
-     </head>
-
-    <style>
-        .textCenter{ 
+    <style> 
+        #progress{ 
+            width: 100%; 
+            background-color: #fff2cd;
+        }
+        #bar{ 
+            width: 1%; 
+            height: 50px; 
+            background-color: #f4e9dd;
             text-align: center;
         }
-        .imgCenter {
-            height: 500px; 
-            display:flex; 
-            justify-content: center;
-            align-items: center;
-            justify-content: center;
+        .img{
+            height: 20px; 
+            text-align: center;
         }
-    </style>
+    </style> 
 
-    <body onload="startTimer()"> 
-        <div class="textCenter">
-            <h2>Avlyners</h2>
+    <script type="text/javascript"> 
+        var i = 0; 
+        function move(){ 
+            if(i == 0){ 
+                var elem = document.getElementById("bar")
+                var width = 1; 
+                var id = setInterval(frame, 20); 
+                function frame(){ 
+                    if(width == 100){ 
+                        clearInterval(id); 
+                        i = 0; 
+                    } else{ 
+                        width++; 
+                        elem.style.width = width + "%"; 
+                    }
+                }
+            }
+        }
+    </script>
+    <head> 
+        <title>loading screen</title>
+    </head>
+    <body onload="move()">
+        <div id="progress"> 
+            <div id="bar"></div>
         </div>
-        <div class="imgCenter">
-            <img id = "img" src = "blobleekRweb.jpg"/> 
+        <div class="img"> 
+            <img id="img" src = "loading_Cat.gif"> 
         </div>
     </body>
 </html>
+    
