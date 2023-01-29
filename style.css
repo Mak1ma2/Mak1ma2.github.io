@@ -15,7 +15,7 @@ body{
     justify-content: center;
     flex-shrink:0; 
     border-bottom: 1px solid transparent;
-    background-color: rgb(255, 242, 204);
+    background-color: rgb(204, 255, 215);
     transition: height .2s ease-in; 
 }
 
@@ -43,6 +43,7 @@ body{
     left: 1130px;
     bottom: 40px;
     font-size:30px;  
+    color: #a58d44;
 }
 
 .task_tool_tip{ 
@@ -96,11 +97,11 @@ body{
 }
 
 .add_task_color{ 
-    color:rgb(110, 167, 96); 
+    color:rgb(167, 116, 96); 
 }
 
 .progress_color{ 
-    color:rgb(180, 81, 180);
+    color:rgb(134, 12, 134);
 }
 
 button{ 
