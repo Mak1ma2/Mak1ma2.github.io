@@ -33,12 +33,29 @@ rgb(255 242 204) <-- background
                         <div class="display-date">
                             <span class="simple_content">Today</span>
                             <small>
-                                <script>document.write(new Date().toDateString());</script> 
+                                <span id="Current-Date"></span>
                             </small>
                         </div>
                         <div class="time_move">
-                            <span><script>document.write(new Date().getHours() + ":" + new Date().getMinutes())</script></span>
+                            <div id="Current-Time"></div>
                         </div>
+                        <script type="text/javascript">
+                            function timer(){ 
+                                var now = new Date() 
+                                var hours = now.getHours()
+                                var minutes = now.getMinutes()
+                                var ampm = hours < 12 ? 'AM' : 'PM' 
+                                var date = now.toDateString()
+                                if( minutes < 10){ 
+                                    minutes = "0" + minutes; 
+                                }
+                                var result = hours + ":" + minutes + " " + ampm;
+                                
+                                document.getElementById("Current-Time").innerHTML = result;
+                                document.getElementById("Current-Date").innerHTML = date;  
+                            }
+                            setInterval(timer, 1000); 
+                        </script>
                     </h1>
                     <hr class="my_hr">
                 </div>
